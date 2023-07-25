@@ -125,3 +125,6 @@ document.getElementById("localidad").addEventListener("change", mostrarFarmaciaD
 
 // Mostrar la farmacia de turno actual para la primera localidad al cargar la página
 mostrarFarmaciaDeTurno();
+
+
+
