@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>Farmacias de Turno</title>
-  <!-- Add Bootstrap CSS link -->
+  <!-- Agregar el meta tag viewport para controlar el escalado en dispositivos móviles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Agregar el enlace al archivo CSS de Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-  <!-- Your custom CSS link -->
+  <!-- Tu CSS personalizado -->
   <link rel="stylesheet" href="styles.css">
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9516551446751407" crossorigin="anonymous"></script>
@@ -14,43 +17,58 @@
 
 </head>
 <body>
-  <br>
-  <br>
-  <h1>Farmacia de Turno</h1>
-
-  <label for="localidad"><h2>Selecciona una localidad:</h2></label>
-  <br>
-  <select id="localidad">
-    <option value="Dorrego">Dorrego</option>
-    <option value="Monte">Monte</option>
-    <!-- Add more options for localities as needed -->
-  </select>
-
-  <br><br>
-  
-  <div id="farmaciaTurno">
-    <p id="nombreFarmacia"></p>
-    <p id="direccionFarmacia"></p>
-    <p id="telefonoFarmacia"></p>
-  </div>
-  
-  <br><br>  <br><br>
-  <!-- Add Bootstrap carousel -->
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="../img/alvarez.jpg" alt="First slide">
+  <div class="container">
+    <!-- Encabezado -->
+    <div class="row">
+      <div class="col">
+        <h1 class="text-center mt-3">Farmacia de Turno</h1>
       </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="../img/perez.png" alt="Second slide">
+    </div>
+
+    <!-- Selector de localidad -->
+    <div class="row mt-4">
+      <div class="col-md-6 offset-md-3">
+        <label for="localidad" class="h4">Seleccione una localidad:</label>
+        <select id="localidad" class="form-control">
+          <option value="Dorrego">Coronel Dorrego</option>
+          <option value="Monte">Monte Hermoso</option>
+          <!-- Agrega más opciones de localidades según sea necesario -->
+        </select>
       </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="..." alt="Third slide">
+    </div>
+
+    <!-- Información de la farmacia -->
+    <div class="row mt-4">
+      <div class="col-md-6 offset-md-3">
+        <div id="farmaciaTurno">
+          <p id="nombreFarmacia"></p>
+          <p id="direccionFarmacia"></p>
+          <p id="telefonoFarmacia"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carrusel de imágenes -->
+    <div class="row mt-4">
+      <div class="col">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="../img/alvarez.jpg" alt="First slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="../img/perez.png" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="..." alt="Third slide">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Add Bootstrap JS and your custom script -->
+  <!-- Agregar los scripts de Bootstrap y tu script personalizado -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

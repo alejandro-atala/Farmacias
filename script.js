@@ -110,7 +110,7 @@ function mostrarFarmaciaDeTurno() {
 
   const farmaciaTurno = document.getElementById("farmaciaTurno");
   farmaciaTurno.innerHTML = `
-    <h3>${farmaciaDeTurno.nombre}</h3>
+    <p>${farmaciaDeTurno.nombre}</p>
     <p>${farmaciaDeTurno.direccion}</p>
     <p>${farmaciaDeTurno.telefono}</p>
     <hr>

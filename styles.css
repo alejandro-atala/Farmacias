@@ -5,7 +5,7 @@ body {
 }
 
 h1 {
-  font-size: 100px;
+  font-size: 80px;
   color: black;
   margin-top: 50px;
 }
@@ -13,7 +13,7 @@ h1 {
 #farmaciaTurno {
   box-shadow: 0px 20px 40px #000000;
   background-color: green;
-  font-size: 70px;
+  font-size: 50px;
   color: white;
   margin-top: 30px;
   border: 1px solid #ccc;
@@ -21,6 +21,7 @@ h1 {
   max-width: 500px;
   margin: 0 auto;
 }
+
 
 
 /* Agrega el estilo para el selector */
@@ -44,3 +45,5 @@ box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     max-width: 500px; /* Adjust the maximum width of the carousel container */
     margin: 0 auto; /* Center the carousel */
   }
+
+
