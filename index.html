@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>Farmacias de Turno</title>
   <!-- Agregar el meta tag viewport para controlar el escalado en dispositivos móviles -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" href="./img/farmacia.png" type="image/png">
+
 
   <!-- Agregar el enlace al archivo CSS de Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -12,11 +16,45 @@
   <!-- Tu CSS personalizado -->
   <link rel="stylesheet" href="styles.css">
 
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9516551446751407" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.5.0/papaparse.min.js"></script>
+  <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="expires" content="0">
+
+
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F8L0DEPKGZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-F8L0DEPKGZ');
+  </script>
+  
+
 
 </head>
+
 <body>
+  <!-- <div id="downloadApp" style="display: none;">
+    <p>¡Descarga nuestra aplicación!</p>
+    <a href="https://ai2.appinventor.mit.edu/b/3x4fq">Descargar APK</a>
+  </div> -->
+  <div class="alert alert-info alert-dismissible fade show" role="alert" id="downloadApp" style="display: none;">
+    <p>¡Descarga la aplicación!</p>
+    <button type="button" class="btn btn-primary" id="downloadButton">Descargar</button>
+    <a href="/" class="btn btn-secondary" id="cancelButton">Cancelar</a>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  
+  
+  
+  
+  
+
   <div class="container">
     <!-- Encabezado -->
     <div class="row">
@@ -29,9 +67,11 @@
     <div class="row mt-4">
       <div class="col-md-6 offset-md-3">
         <label for="localidad" class="h4">Seleccione una localidad:</label>
-        <select id="localidad" class="form-control">
+        <select id="localidad" class="form-control select mx-auto">
           <option value="Dorrego">Coronel Dorrego</option>
           <option value="Monte">Monte Hermoso</option>
+             <!-- <option value="Oriente">Oriente</option> -->
+             <!-- <option value="Tres Arroyos">Tres Arroyos</option> -->
           <!-- Agrega más opciones de localidades según sea necesario -->
         </select>
       </div>
@@ -40,39 +80,120 @@
     <!-- Información de la farmacia -->
     <div class="row mt-4">
       <div class="col-md-6 offset-md-3">
+      
+
         <div id="farmaciaTurno">
+          <div class="progress-bar">
+            <div class="progress" id="loading-bar">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+            </div>
+          </div>
           <p id="nombreFarmacia"></p>
-          <p id="direccionFarmacia"></p>
+          
+    <p><a class="farmacia-direccion" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(farmaciaDeTurno.direccion)}" target="_blank">${farmaciaDeTurno.direccion}</a></p>
+
           <p id="telefonoFarmacia"></p>
         </div>
       </div>
     </div>
-
+    <br>
+    <a href="https://wa.me/+542921475076?text=¡Estoy+interesado+en+publicitar!"class="boton-contacto">Anuncie Aqui</a>
     <!-- Carrusel de imágenes -->
-    <div class="row mt-4">
-      <div class="col">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="d-block w-100" src="../img/alvarez.jpg" alt="First slide">
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col">
+          <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block mx-auto img-fluid" src="./img/aa.png" alt="Imagen 1">
+              </div>
+
+
+              <div class="carousel-item">
+                <img class="d-block mx-auto img-fluid" src="./img/mica.png" alt="Imagen 3">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block mx-auto img-fluid" src="./img/tere.png" alt="Imagen 3">
+              </div>
+              <!-- Agregar más elementos de carrusel aquí -->
             </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="../img/perez.png" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="..." alt="Third slide">
-            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </div>
+</br>
 
-  <!-- Agregar los scripts de Bootstrap y tu script personalizado -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-  <script src="script.js"></script>
+
+
+<div><a href="http://mpago.la/2a88h8z" class="boton-mp">Colaborar con el proyecto</a></div>
+</br> </br>
+<p>Visitante N°</p>
+<!-- Start of CuterCounter Code -->
+<a href="https://www.cutercounter.com/spanish/" target="_blank"><img src="https://www.cutercounter.com/hits.php?id=hexodncd&nd=4&style=16" border="0" alt="contador de visitas gratis"></a>
+<!-- End of CuterCounter Code -->
+<!-- Agregar los scripts de Bootstrap y tu script personalizado -->
+<script src="papaparse.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="script.js"></script>
+
+<script>
+  // Función para iniciar la descarga del archivo .apk
+  function descargarApk() {
+    // Especifica la URL del archivo .apk en tu servidor
+    const urlApk = 'Farmacias.apk'; // Reemplaza 'ruta-a-tu-archivo.apk' con la ruta real de tu archivo .apk
+
+    // Crea un elemento <a> para la descarga directa
+    const link = document.createElement('a');
+    link.href = urlApk;
+    link.target = '_blank'; // Abre la descarga en una nueva ventana
+    link.download = 'Farmacias.apk'; // Puedes especificar el nombre del archivo aquí
+
+    // Activa el enlace de descarga
+    link.click();
+  }
+
+  // Función para mostrar el cartel de descarga de la aplicación
+  function mostrarCartelDescarga() {
+    const cartel = document.getElementById("downloadApp");
+    cartel.style.display = "block";
+  }
+
+  // Función para cerrar el cartel y redirigir a la página principal
+  function cancelarDescarga() {
+    const cartel = document.getElementById("downloadApp");
+    cartel.style.display = "none";
+    // Redirigir al usuario a la página principal (cambia "/" a la URL deseada)
+    window.location.href = "/";
+  }
+
+  // Mostrar el cartel después de 3 segundos
+  setTimeout(mostrarCartelDescarga, 5000);
+
+  // Agregar un evento de clic al botón "Descargar"
+  document.getElementById("downloadButton").addEventListener("click", descargarApk);
+
+  // Agregar un evento de clic al botón "Cancelar"
+  document.getElementById("cancelButton").addEventListener("click", cancelarDescarga);
+</script>
+
+
+
+<!-- Start of CuterCounter Code -->
+<!-- <a href="https://www.cutercounter.com/spanish/" target="_blank"><img src="https://www.cutercounter.com/hits.php?id=hxnqnkk&nd=4&style=16" border="0" alt="contador de visitas"></a> -->
+<!-- End of CuterCounter Code -->
 </body>
+
 </html>

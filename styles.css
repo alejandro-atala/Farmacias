@@ -1,13 +1,22 @@
 body {
+    margin: 0;
+  padding: 0;
   background-color: darkgray;
   font-family: Arial, sans-serif;
   text-align: center;
+  justify-content: center;
 }
 
+
+
 h1 {
-  font-size: 80px;
+  font-size: 40px;
   color: black;
   margin-top: 50px;
+}
+
+.select{
+  width: 200px;
 }
 
 #farmaciaTurno {
@@ -17,8 +26,9 @@ h1 {
   color: white;
   margin-top: 30px;
   border: 1px solid #ccc;
+  border-radius: 10px;
   padding: 20px;
-  max-width: 500px;
+  max-width: auto;
   margin: 0 auto;
 }
 
@@ -26,24 +36,140 @@ h1 {
 
 /* Agrega el estilo para el selector */
 select {
+ 
 font-size: 24px;
 padding: 10px;
 margin-top: 20px;
 border: 1px solid #ccc;
 background-color: #ccc;
 color: #333;
-border-radius: 5px;
+border-radius: 1px;
 box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
    /* Custom CSS to adjust carousel size */
+   @media (min-width: 768px) {
    .carousel-inner img {
-    max-height: 300px; /* Adjust the height of the images */
+    max-height: 400px; /* Adjust the height of the images */
+   }
+  
+
+   #carouselExampleSlidesOnly {
+    max-width: 50%; /* Ajustar el máximo ancho del carrusel en la versión de escritorio */
+    margin: 0 auto; /* Centrar el carrusel */
   }
 
-  #carouselExampleSlidesOnly {
-    max-width: 500px; /* Adjust the maximum width of the carousel container */
-    margin: 0 auto; /* Center the carousel */
   }
 
 
+
+
+  .boton-contacto {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #079202; /* Color de fondo del botón (puedes cambiarlo) */
+    color: #fff; /* Color del texto del botón (puedes cambiarlo) */
+    border-radius: 20px; /* Radio de los bordes para hacerlos redondeados */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+}
+
+/* Cambia el estilo cuando se pasa el mouse por encima del botón */
+.boton-contacto:hover {
+    background-color: #1eb300; /* Puedes cambiar el color al pasar el mouse */
+}
+
+/* Estilos para el botón similar a WhatsApp */
+.boton-mp {
+  display: inline-block;
+  background-color: #007BFF;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.boton-mp:hover {
+  background-color: #0056b3;
+}
+
+.farmacia-telefono {
+  font-size: 40px;
+  color: white;
+  
+}
+
+
+   /* Estilo inicial del enlace (blanco) */
+   .farmacia-direccion {
+    font-size: 40px;
+    color: white;
+    animation: cambioColor 4s infinite alternate; /* Aplicar la animación */
+  }
+
+ /* Estilo inicial del enlace (subrayado blanco) */
+ .farmacia-direccion {
+  color: white;
+  text-decoration: underline white; /* Subrayado blanco */
+  animation: subrayarDesvanecer 1s infinite alternate;
+}
+
+#farmaciaTurno p {
+  display: none;
+}
+
+/* Definir la animación utilizando keyframes */
+@keyframes subrayarDesvanecer {
+  0% {
+    text-decoration: underline white; /* Subrayado blanco al inicio */
+    /* color: white; */
+  }
+  100% {
+    text-decoration: underline transparent; /* Subrayado transparente al final */
+    /* color: blue; */
+  }
+}
+
+/* Estilo para el logotipo de Google Maps */
+.google-maps-logo {
+  width: 50px; /* Ajusta el tamaño según tus necesidades */
+  height: 30px;
+  margin-left: -50px; /* Espacio entre el logotipo y la dirección */
+}
+/* Estilo para el logotipo de tel */
+.tel-logo {
+  width: 50px; /* Ajusta el tamaño según tus necesidades */
+  height: 50px;
+  margin-left: -50px; /* Espacio entre el logotipo y la dirección */
+}
+
+
+
+.progress-bar {
+  display: none;
+  width: 100%;
+  height: 20px;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.progress {
+  width: 0;
+  height: 100%;
+  background-color: #00ff40;
+  border-radius: 4px;
+  animation: progress 2s linear infinite;
+}
+
+@keyframes progress {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
